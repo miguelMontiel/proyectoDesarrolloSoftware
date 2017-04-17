@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="paneRegistro" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="textxml.RegistroController">
+   <children>
+      <Button fx:id="buttonIngresar" layoutX="14.0" layoutY="528.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#paginaIndex" prefHeight="58.0" prefWidth="169.0" text="Ingresar" textAlignment="CENTER" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="671.0" AnchorPane.topAnchor="528.0">
+         <font>
+            <Font name="Arial" size="30.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="55.0" prefWidth="366.0" text="Registra tus datos!" wrapText="true">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="83.0" prefHeight="38.0" prefWidth="117.0" text="Nombre(s):" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="130.0" prefHeight="38.0" prefWidth="117.0" text="Apellido(s):" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="177.0" prefHeight="38.0" prefWidth="198.0" text="Fecha de Nacimiento:" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="223.0" prefHeight="38.0" prefWidth="117.0" text="Correo:" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="14.0" layoutY="273.0" prefHeight="38.0" prefWidth="117.0" text="Domicilio:" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datepickerFechaNac" layoutX="253.0" layoutY="184.0" promptText="Fecha" />
+      <TextField fx:id="textfieldNombre" layoutX="253.0" layoutY="90.0" />
+      <TextField fx:id="textfieldApellido" layoutX="253.0" layoutY="137.0" />
+      <TextField fx:id="textfieldCorreo" layoutX="253.0" layoutY="230.0" />
+      <TextField fx:id="textfieldCalle" layoutX="253.0" layoutY="280.0" promptText="Calle" />
+      <TextField fx:id="textfieldColonia" layoutX="410.0" layoutY="280.0" promptText="Colonia" />
+      <ComboBox fx:id="comboboxDelegacion" layoutX="568.0" layoutY="280.0" prefWidth="150.0" promptText="Delegacion" />
+   </children>
+</AnchorPane>

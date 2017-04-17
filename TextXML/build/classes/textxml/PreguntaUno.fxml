@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="textxml.PreguntaUnoController">
+   <children>
+      <Label fx:id="labelPreguntas" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="81.0" prefWidth="774.0" text="Preguntas" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <HBox layoutX="2.0" layoutY="128.0" prefHeight="400.0" prefWidth="800.0">
+         <children>
+            <Circle fx:id="buttonMal" fill="#71bbff" onMouseClicked="#siguientePregunta" radius="100.0" stroke="BLACK" strokeType="INSIDE">
+               <HBox.margin>
+                  <Insets left="50.0" top="100.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Circle>
+            <Circle fx:id="buttonNeutral" fill="#71bbff" onMouseClicked="#siguientePregunta" radius="100.0" stroke="BLACK" strokeType="INSIDE">
+               <HBox.margin>
+                  <Insets left="50.0" top="100.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Circle>
+            <Circle fx:id="buttonBueno" fill="#71bbff" onMouseClicked="#siguientePregunta" radius="100.0" stroke="BLACK" strokeType="INSIDE">
+               <HBox.margin>
+                  <Insets left="50.0" top="100.0" />
+               </HBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Circle>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
