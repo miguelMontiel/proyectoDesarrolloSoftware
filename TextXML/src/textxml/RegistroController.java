@@ -1,7 +1,11 @@
 package textxml;
 
+//import com.mysql.jdbc.Connection;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -60,5 +64,47 @@ public class RegistroController implements Initializable
             app_stage.show();
         }
     }
+    /*
+    private boolean isValidCredentials()
+    {
+        boolean let_in = false;
+        System.out.println("Nombre = " + textfieldNombre.getText());
+        System.out.println("Apellido = " + textfieldApellido.getText());
+        System.out.println("Correo = " + textfieldCorreo.getText());
+        System.out.println("Calle = " + textfieldCalle.getText());
+        System.out.println("Colonia = " + textfieldColonia.getText());
+        System.out.println("Fecha de Nacimiento = " + datepickerFechaNac.getValue());
+        System.out.println("Delegacion = " + comboboxDelegacion.getValue());
     
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            c = DriverManager.getConnection("jdbc:sqlite:first.db");
+            c.setAutoCommit(false);
+            
+            System.out.println("Opened database successfully");
+            stmt = c.createStatement();
+            
+            ResultSet rs = stmt.executeQuery( "SELECT * FROM Users WHERE USERNAME= " + "'" + username_box.getText() + "'" 
+            + " AND PASSWORD= " + "'" + password_box.getText() + "'");
+            
+            while ( rs.next() ) {
+                 if (rs.getString("USERNAME") != null && rs.getString("PASSWORD") != null) { 
+                     String  username = rs.getString("USERNAME");
+                     System.out.println( "USERNAME = " + username );
+                     String password = rs.getString("PASSWORD");
+                     System.out.println("PASSWORD = " + password);
+                     let_in = true;
+                 }  
+            }
+            rs.close();
+            stmt.close();
+            c.close();
+            } catch ( Exception e ) {
+                System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+                System.exit(0);
+            }
+            System.out.println("isValidCredentials operation done successfully");
+return let_in; 
+*/
 }
