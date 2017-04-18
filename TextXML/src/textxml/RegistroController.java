@@ -1,8 +1,8 @@
 package textxml;
 
-//import com.mysql.jdbc.Connection;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -42,9 +42,17 @@ public class RegistroController implements Initializable
     @FXML
     private ComboBox<?> comboboxDelegacion;
     
+    static String bd = "Farmacia";
+
+    static String login = "root";
+
+    static String password = "";
+
+    static String url = "jdbc:mysql://localhost/" + bd;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) 
-    {
+    { 
     }    
 
     @FXML
@@ -65,7 +73,7 @@ public class RegistroController implements Initializable
         }
     }
     /*
-    private boolean isValidCredentials()
+    private boolean esValido()
     {
         boolean let_in = false;
         System.out.println("Nombre = " + textfieldNombre.getText());
@@ -78,29 +86,36 @@ public class RegistroController implements Initializable
     
         Connection c = null;
         Statement stmt = null;
-        try {
-            c = DriverManager.getConnection("jdbc:sqlite:first.db");
+        try 
+        {
+            c = DriverManager.getConnection(url, login, password);
             c.setAutoCommit(false);
             
-            System.out.println("Opened database successfully");
+            System.out.println("Conexion exitosa!");
             stmt = c.createStatement();
             
-            ResultSet rs = stmt.executeQuery( "SELECT * FROM Users WHERE USERNAME= " + "'" + username_box.getText() + "'" 
-            + " AND PASSWORD= " + "'" + password_box.getText() + "'");
+            ResultSet rs = stmt.executeQuery
+            ( 
+                "INSERT INTO CRMproyecto VALUES ('','" + textfieldNombre.getText()) 
+            );
             
-            while ( rs.next() ) {
-                 if (rs.getString("USERNAME") != null && rs.getString("PASSWORD") != null) { 
-                     String  username = rs.getString("USERNAME");
-                     System.out.println( "USERNAME = " + username );
-                     String password = rs.getString("PASSWORD");
-                     System.out.println("PASSWORD = " + password);
-                     let_in = true;
-                 }  
+            while (rs.next()) 
+            {
+                if (rs.getString("USERNAME") != null && rs.getString("PASSWORD") != null) 
+                { 
+                    String  username = rs.getString("USERNAME");
+                    System.out.println( "USERNAME = " + username );
+                    String password = rs.getString("PASSWORD");
+                    System.out.println("PASSWORD = " + password);
+                    let_in = true;
+                }  
             }
             rs.close();
             stmt.close();
             c.close();
-            } catch ( Exception e ) {
+            } 
+            catch ( Exception e ) 
+            {
                 System.err.println( e.getClass().getName() + ": " + e.getMessage() );
                 System.exit(0);
             }
