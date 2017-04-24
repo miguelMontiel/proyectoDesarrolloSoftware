@@ -26,12 +26,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="81.0" prefWidth="840.0" text="Al ser miembro de nuestra sucursal, puedes disfrutar de varios beneficios! Ademas de poder contar facilmente con tus datos para el envio de cualquier pedido." wrapText="true">
+      <Label alignment="CENTER" layoutX="14.0" layoutY="120.0" prefHeight="81.0" prefWidth="840.0" text="Al ser miembro de nuestra sucursal, puedes disfrutar de varios beneficios! Ademas de poder contar facilmente con tus datos para el envio de cualquier pedido." wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="14.0" layoutY="505.0" prefHeight="81.0" prefWidth="840.0" text="Haz conocer tu opinion y experiencias de nuestro servicio para poder mejorarlo en tu proxima visita." wrapText="true">
+      <Label alignment="CENTER" layoutX="14.0" layoutY="404.0" prefHeight="81.0" prefWidth="840.0" text="Haz conocer tu opinion y experiencias de nuestro servicio para poder mejorarlo en tu proxima visita." wrapText="true">
          <font>
             <Font size="20.0" />
          </font>
@@ -41,5 +41,10 @@
             <Font size="20.0" />
          </font>
       </Label>
+      <Button fx:id="buttonLogin" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#paginaLogin" text="Ingresar">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

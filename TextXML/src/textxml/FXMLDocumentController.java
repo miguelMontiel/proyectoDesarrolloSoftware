@@ -29,12 +29,26 @@ public class FXMLDocumentController implements Initializable
     private Label labelTiempo;
     
     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    @FXML
+    private Button buttonLogin;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
         labelTiempo.setText("Hola");
     }    
+    
+    @FXML
+    private void paginaLogin(ActionEvent event) throws IOException 
+    {
+        Parent parent = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Scene scene = new Scene(parent);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.hide();
+        stage.show();
+    }
+    
     @FXML
     private void paginaRegistro(ActionEvent event) throws IOException  
     {
@@ -45,7 +59,6 @@ public class FXMLDocumentController implements Initializable
         stage.hide();
         stage.show();
     }
-    
     
     @FXML
     private void paginaPreguntas(ActionEvent event) throws IOException
@@ -115,6 +128,5 @@ public class FXMLDocumentController implements Initializable
             }
             System.out.println("isValidCredentials operation done successfully");
 return let_in;
-    */
-    
+    */    
 }
