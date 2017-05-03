@@ -3,10 +3,12 @@ package textxml;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -68,7 +70,7 @@ public class RegistroController implements Initializable
         }
         else
         {            
-            esValido();
+            Insertar();
             
             Parent home_page_parent = FXMLLoader.load(getClass().getResource("Index.fxml"));
             Scene home_page_scene = new Scene(home_page_parent);
@@ -79,18 +81,28 @@ public class RegistroController implements Initializable
         }
     }
     
-    void esValido() throws Exception
-    {
-        System.out.println("Nombre = " + textfieldNombre.getText());
-        System.out.println("Apellido = " + textfieldApellido.getText());
-        System.out.println("Correo = " + textfieldCorreo.getText());
-        System.out.println("Celular = " + textfieldCelular.getText());
-        System.out.println("Calle = " + textfieldCalle.getText());
-        System.out.println("Colonia = " + textfieldColonia.getText());
-        System.out.println("Fecha de Nacimiento = " + datepickerFechaNac.getValue());
-        System.out.println("Delegacion = " + comboboxDelegacion.getValue());
-        System.out.println("Promocion = " + checkboxPromociones.isSelected());
+    void Insertar() throws Exception
+    {        
+        String nombre = textfieldNombre.getText();
+        String apellido = textfieldApellido.getText();
+        String correo = textfieldCorreo.getText();
+        String celular = textfieldCelular.getText();
+        String calle = textfieldCalle.getText();
+        String colonia = textfieldColonia.getText();
+        String delegacion = comboboxDelegacion.getValue();
+        LocalDate fecha = datepickerFechaNac.getValue();
+        boolean promociones = checkboxPromociones.isSelected();
     
+        System.out.println("Nombre = " + nombre);
+        System.out.println("Apellido = " + apellido);
+        System.out.println("Correo = " + correo);
+        System.out.println("Celular = " + celular);
+        System.out.println("Calle = " + calle);
+        System.out.println("Colonia = " + colonia);
+        System.out.println("Fecha de Nacimiento = " + fecha);
+        System.out.println("Delegacion = " + delegacion);
+        System.out.println("Promocion = " + promociones);
+        
         Connection connection = null;
         Statement statement = null;
         
