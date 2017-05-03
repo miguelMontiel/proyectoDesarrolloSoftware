@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="textxml.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="textxml.LoginController">
    <children>
       <Button fx:id="buttonAccesar" layoutX="229.0" layoutY="286.0" mnemonicParsing="false" onAction="#paginaInformacion" text="Accesar">
          <font>
@@ -20,13 +19,13 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <TextField layoutX="300.0" layoutY="136.0" />
+      <TextField fx:id="usuarioTextfield" layoutX="300.0" layoutY="136.0" />
       <Label layoutX="123.0" layoutY="182.0" text="Contrasena: ">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <TextField layoutX="300.0" layoutY="188.0" />
+      <TextField fx:id="passwordTextfield" layoutX="300.0" layoutY="188.0" />
       <Button fx:id="buttonRegresar" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#paginaIndex" text="Regresar">
          <font>
             <Font size="30.0" />

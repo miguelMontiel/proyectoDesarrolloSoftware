@@ -14,6 +14,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -31,6 +33,8 @@ public class FXMLDocumentController implements Initializable
     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     @FXML
     private Button buttonLogin;
+    @FXML
+    private ImageView logo;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
@@ -69,6 +73,12 @@ public class FXMLDocumentController implements Initializable
         stage.setScene(scene);
         stage.hide();
         stage.show();
+    }
+    
+    @FXML
+    private void animacionBoton(MouseEvent event) 
+    {
+        
     }
     
     /*
