@@ -43,11 +43,26 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ScrollPane prefHeight="500.0" prefWidth="800.0">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0" />
-                          </content>
-                        </ScrollPane>
+                        <LineChart layoutX="286.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" title="Resultados" visible="false">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <BarChart layoutX="286.0" layoutY="42.0" visible="false">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <PieChart layoutX="286.0" layoutY="74.0" visible="false" />
+                        <Button layoutX="14.0" layoutY="324.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="250.0" text="Button" />
+                        <Button layoutX="14.0" layoutY="167.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="250.0" text="Button" />
+                        <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="250.0" text="Button" />
                      </children>
                   </AnchorPane>
             </content>
