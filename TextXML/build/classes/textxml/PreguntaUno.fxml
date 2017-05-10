@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="textxml.PreguntaUnoController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgb(175, 225, 255);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="textxml.PreguntaUnoController">
    <children>
       <Label fx:id="labelPreguntas" alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="81.0" prefWidth="774.0" text="Preguntas" wrapText="true">
          <font>
@@ -19,7 +19,7 @@
       </Label>
       <HBox layoutX="2.0" layoutY="128.0" prefHeight="400.0" prefWidth="800.0">
          <children>
-            <Circle fx:id="buttonMal" fill="#71bbff" onMouseClicked="#siguientePregunta" radius="100.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="buttonMal" fill="#71bbff" onMouseClicked="#siguientePregunta" radius="100.0" stroke="#00000040" strokeType="INSIDE">
                <HBox.margin>
                   <Insets left="50.0" top="100.0" />
                </HBox.margin>
@@ -27,7 +27,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Circle>
-            <Circle fx:id="buttonNeutral" fill="#71bbff" onMouseClicked="#siguientePregunta" radius="100.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="buttonNeutral" fill="#73beff" onMouseClicked="#siguientePregunta" radius="100.0" stroke="#00000040" strokeType="INSIDE">
                <HBox.margin>
                   <Insets left="50.0" top="100.0" />
                </HBox.margin>
@@ -35,7 +35,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Circle>
-            <Circle fx:id="buttonBueno" fill="#71bbff" onMouseClicked="#siguientePregunta" radius="100.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="buttonBueno" fill="#71bbff" onMouseClicked="#siguientePregunta" radius="100.0" stroke="#00000040" strokeType="INSIDE">
                <HBox.margin>
                   <Insets left="50.0" top="100.0" />
                </HBox.margin>
@@ -45,5 +45,20 @@
             </Circle>
          </children>
       </HBox>
+      <Label alignment="TOP_LEFT" layoutX="77.0" layoutY="528.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="152.0" text="Malo">
+         <font>
+            <Font name="Dotum" size="65.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="285.0" layoutY="528.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="232.0" text="Regular">
+         <font>
+            <Font name="Dotum" size="65.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="565.0" layoutY="528.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="200.0" text="Bueno">
+         <font>
+            <Font name="Dotum" size="65.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

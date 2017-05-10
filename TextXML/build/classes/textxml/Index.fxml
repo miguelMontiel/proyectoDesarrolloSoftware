@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.*?>
 
-<AnchorPane id="AnchorPane" fx:id="paneIndex" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgb(250, 225, 250);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="textxml.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="paneIndex" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgb(175, 225, 255);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="textxml.FXMLDocumentController">
    <children>
-      <Button fx:id="buttonPreguntas" contentDisplay="CENTER" layoutX="215.0" layoutY="314.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#paginaPreguntas" prefHeight="75.0" prefWidth="396.0" style="-fx-background-color: rgb(255, 210, 255); -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="Danos tu opinion!" textAlignment="CENTER">
+      <Button fx:id="buttonPreguntas" contentDisplay="CENTER" layoutX="215.0" layoutY="314.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#paginaPreguntas" prefHeight="75.0" prefWidth="396.0" style="-fx-background-color: rgb(130, 190, 225); -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="Danos tu opinion!" textAlignment="CENTER">
          <font>
             <Font name="DotumChe" size="40.0" />
          </font>
@@ -21,7 +21,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="buttonRegistro" layoutX="276.0" layoutY="210.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#paginaRegistro" onMouseDragged="#animacionBoton" style="-fx-background-color: rgb(255, 210, 255); -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="Registrate!" textAlignment="CENTER" AnchorPane.bottomAnchor="315.0" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="276.0" AnchorPane.topAnchor="210.0">
+      <Button fx:id="buttonRegistro" layoutX="276.0" layoutY="210.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#paginaRegistro" onMouseDragged="#animacionBoton" style="-fx-background-color: rgb(130, 190, 225); -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="Registrate!" textAlignment="CENTER" AnchorPane.bottomAnchor="315.0" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="276.0" AnchorPane.topAnchor="210.0">
          <font>
             <Font name="DotumChe" size="40.0" />
          </font>
@@ -39,12 +39,7 @@
             <Font name="Dotum" size="20.0" />
          </font>
       </Label>
-      <Label fx:id="labelTiempo" layoutX="20.0" layoutY="285.0" text="labelTiempo">
-         <font>
-            <Font name="Dotum" size="20.0" />
-         </font>
-      </Label>
-      <Button fx:id="buttonLogin" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#paginaLogin" style="-fx-background-color: rgb(220, 110, 220); -fx-background-radius: 10px; -fx-border-color: White; -fx-border-radius: 10px; -fx-border-insets: 1px;" text="Ingresar" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="buttonLogin" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#paginaLogin" style="-fx-background-color: rgb(130, 190, 225); -fx-background-radius: 10px; -fx-border-color: White; -fx-border-radius: 10px; -fx-border-insets: 1px;" text="Ingresar" textAlignment="CENTER">
          <font>
             <Font name="DotumChe" size="30.0" />
          </font>

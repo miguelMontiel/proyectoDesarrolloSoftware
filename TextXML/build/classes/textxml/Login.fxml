@@ -7,28 +7,34 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="textxml.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: rgb(175, 225, 255);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="textxml.LoginController">
    <children>
-      <Button fx:id="buttonAccesar" layoutX="229.0" layoutY="286.0" mnemonicParsing="false" onAction="#paginaInformacion" text="Accesar">
+      <Button fx:id="buttonAccesar" layoutX="197.0" layoutY="286.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#paginaInformacion" style="-fx-background-color: rgb(130, 190, 225); -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="Accesar">
          <font>
-            <Font size="30.0" />
+            <Font name="Dotum" size="40.0" />
          </font>
       </Button>
-      <Label layoutX="123.0" layoutY="130.0" text="Usuario: ">
+      <Label layoutX="117.0" layoutY="132.0" text="Usuario: ">
          <font>
-            <Font size="25.0" />
+            <Font name="Dotum" size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="usuarioTextfield" layoutX="300.0" layoutY="136.0" />
-      <Label layoutX="123.0" layoutY="182.0" text="Contrasena: ">
+      <TextField fx:id="usuarioTextfield" layoutX="285.0" layoutY="129.0" style="-fx-background-color: rgb(225, 230, 255); -fx-border-color: rgb(0, 0, 0, .25);">
          <font>
-            <Font size="25.0" />
+            <Font name="Dotum" size="20.0" />
+         </font></TextField>
+      <Label layoutX="90.0" layoutY="199.0" text="Contrasena: ">
+         <font>
+            <Font name="Dotum" size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="passwordTextfield" layoutX="300.0" layoutY="188.0" />
-      <Button fx:id="buttonRegresar" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#paginaIndex" text="Regresar">
+      <TextField fx:id="passwordTextfield" layoutX="285.0" layoutY="196.0" style="-fx-background-color: rgb(225, 230, 255); -fx-border-color: rgb(0, 0, 0, .25);">
          <font>
-            <Font size="30.0" />
+            <Font name="Dotum" size="20.0" />
+         </font></TextField>
+      <Button fx:id="buttonRegresar" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#paginaIndex" style="-fx-background-color: rgb(130, 190, 225); -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="Regresar">
+         <font>
+            <Font name="Dotum" size="30.0" />
          </font>
       </Button>
    </children>

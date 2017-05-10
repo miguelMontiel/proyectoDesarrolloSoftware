@@ -3,12 +3,9 @@ package textxml;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -47,18 +44,28 @@ public class RegistroController implements Initializable
     private TextField textfieldColonia;
     @FXML
     private ComboBox<String> comboboxDelegacion = new ComboBox<String>();
+    @FXML
+    private CheckBox checkboxPromociones;
     
     static String login = "root";
     static String password = "";
-    static String url = "jdbc:mysql://localhost/proyectodp";
-    @FXML
-    private CheckBox checkboxPromociones;
-
+    static String url = "jdbc:mysql://localhost/proyectodp?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     
+    String nombre;
+    String apellido;
+    String correo; 
+    String celular;
+    String calle;
+    String colonia;
+    String delegacion;
+    String fecha;
+    boolean promociones;
+    int intPromociones;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     { 
-        comboboxDelegacion.getItems().addAll("A","B","C","D","E");
+        comboboxDelegacion.getItems().addAll("Miguel Hidalgo","Cuauhtemoc","Azcapotzalco","Neza York");
     }    
 
     @FXML
@@ -82,16 +89,25 @@ public class RegistroController implements Initializable
     }
     
     void Insertar() throws Exception
-    {        
-        String nombre = textfieldNombre.getText();
-        String apellido = textfieldApellido.getText();
-        String correo = textfieldCorreo.getText();
-        String celular = textfieldCelular.getText();
-        String calle = textfieldCalle.getText();
-        String colonia = textfieldColonia.getText();
-        String delegacion = comboboxDelegacion.getValue();
-        LocalDate fecha = datepickerFechaNac.getValue();
-        boolean promociones = checkboxPromociones.isSelected();
+    {              
+        nombre = textfieldNombre.getText();
+        apellido = textfieldApellido.getText();
+        correo = textfieldCorreo.getText();
+        celular = textfieldCelular.getText();
+        calle = textfieldCalle.getText();
+        colonia = textfieldColonia.getText();
+        delegacion = comboboxDelegacion.getValue();
+        fecha = datepickerFechaNac.getEditor().getText();
+        promociones = checkboxPromociones.isSelected();
+        
+        if(promociones)
+        {
+            intPromociones = 1;
+        }
+        else
+        {
+            intPromociones = 0;
+        }
     
         System.out.println("Nombre = " + nombre);
         System.out.println("Apellido = " + apellido);
@@ -102,14 +118,15 @@ public class RegistroController implements Initializable
         System.out.println("Fecha de Nacimiento = " + fecha);
         System.out.println("Delegacion = " + delegacion);
         System.out.println("Promocion = " + promociones);
+        System.out.println("Promocion = " + intPromociones);
         
         Connection connection = null;
         Statement statement = null;
         
         try 
         {
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection(url, login, password);
-            connection.setAutoCommit(false);
             statement = connection.createStatement();
             
             if (connection != null)
@@ -117,17 +134,9 @@ public class RegistroController implements Initializable
                 System.out.println("Conexion a base de datos " + url + " ... Ok");
                 statement.executeUpdate
                 (
-                    "INSERT INTO 'clients' VALUES ('','" + 
-                            textfieldNombre.getText() + "','" + 
-                            textfieldApellido.getText() + "','" + 
-                            textfieldCorreo.getText() + "','" + 
-                            textfieldCelular.getText() + "','" + 
-                            textfieldCalle.getText() + "','" + 
-                            textfieldColonia.getText() + "','" + 
-                            comboboxDelegacion.getValue() + "','" + 
-                            datepickerFechaNac.getValue() + "','" + 
-                            checkboxPromociones.isSelected() + "', '')"
+                    "INSERT INTO clients (ID, Name, Surname, Mail, Phone, Street, Colony, Delegation, DateBirth, Promotions, Active) VALUES (NULL, '" + nombre + "', '" + apellido + "', '" + correo + "', '" + celular + "', '" + calle + "', '" + colonia + "', '" + delegacion + "', '" + fecha + "', '" + intPromociones + "', 1)"
                 );
+                System.out.println("Insertado!");
                 connection.close();
             }
         }
@@ -139,7 +148,6 @@ public class RegistroController implements Initializable
         catch(Exception e)
         {
             System.out.println(e.getMessage());
-            return;
         } 
     }
 }

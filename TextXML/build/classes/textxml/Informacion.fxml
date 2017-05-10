@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.chart.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,17 +8,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="textxml.InformacionController">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgb(175, 225, 255);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="textxml.InformacionController">
    <children>
-      <TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: rgb(175, 225, 255);" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Usuarios">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: rgb(175, 225, 255);">
                      <children>
-                        <ScrollPane prefHeight="500.0" prefWidth="800.0">
+                        <ScrollPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: rgb(175, 225, 255);">
                           <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="787.0">
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="787.0" style="-fx-background-color: rgb(175, 225, 255);">
                                  <children>
                                     <TableView prefHeight="500.0" prefWidth="788.0">
                                       <columns>
@@ -43,17 +44,45 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ScrollPane prefHeight="500.0" prefWidth="800.0">
-                          <content>
-                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0" />
-                          </content>
-                        </ScrollPane>
+                        <LineChart layoutX="286.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" title="Resultados" visible="false">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <BarChart layoutX="286.0" layoutY="42.0" visible="false">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <PieChart layoutX="286.0" layoutY="74.0" visible="false" />
+                        <Button layoutX="14.0" layoutY="324.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="250.0" style="-fx-background-color: rgb(130, 190, 225); -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-border-color: black;" text="Pie">
+                           <font>
+                              <Font name="Dotum" size="50.0" />
+                           </font></Button>
+                        <Button layoutX="14.0" layoutY="167.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="250.0" style="-fx-background-color: rgb(130, 190, 225); -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="Barras">
+                           <font>
+                              <Font name="Dotum" size="50.0" />
+                           </font></Button>
+                        <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="250.0" style="-fx-background-color: rgb(130, 190, 225); -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="Linea">
+                           <font>
+                              <Font name="Dotum" size="50.0" />
+                           </font></Button>
+                        <Button fx:id="buttonSesion" layoutX="670.0" layoutY="530.0" mnemonicParsing="false" onAction="#paginaIndex" style="-fx-background-color: rgb(130, 190, 225); -fx-border-color: white; -fx-border-radius: 5px;" text="Cerrar Sesion">
+                           <font>
+                              <Font name="Dotum" size="15.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="buttonSesion" layoutX="694.0" layoutY="559.0" mnemonicParsing="false" onAction="#paginaIndex" text="Cerrar Sesion" />
    </children>
 </AnchorPane>

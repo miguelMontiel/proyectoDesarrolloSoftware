@@ -11,12 +11,17 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 public class InformacionController implements Initializable 
 {
     @FXML
     private Button buttonSesion;
+    @FXML
+    private Button buttonSesion1;
+    @FXML
+    private TableView<?> tableClients;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) 

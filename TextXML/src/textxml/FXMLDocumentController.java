@@ -2,6 +2,10 @@ package textxml;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
@@ -18,6 +22,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import static textxml.RegistroController.url;
 
 public class FXMLDocumentController implements Initializable 
 {    
@@ -28,10 +33,6 @@ public class FXMLDocumentController implements Initializable
     @FXML
     private Button buttonPreguntas;
     @FXML
-    private Label labelTiempo;
-    
-    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-    @FXML
     private Button buttonLogin;
     @FXML
     private ImageView logo;
@@ -39,7 +40,6 @@ public class FXMLDocumentController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        labelTiempo.setText("Hola");
     }    
     
     @FXML

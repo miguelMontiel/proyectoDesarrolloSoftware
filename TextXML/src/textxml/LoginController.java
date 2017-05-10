@@ -22,8 +22,8 @@ import javax.swing.JOptionPane;
 public class LoginController implements Initializable 
 {
     static String login = "root";
-    static String password = "";
-    static String url = "jdbc:mysql://localhost/proyectodp";
+    static String passwordDB = "";
+    static String url = "jdbc:mysql://localhost/proyectodp?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     
     @FXML
     private Button buttonAccesar;
@@ -33,6 +33,9 @@ public class LoginController implements Initializable
     private TextField usuarioTextfield;
     @FXML
     private TextField passwordTextfield;
+    
+    String usuario;
+    String password;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) 
@@ -74,30 +77,29 @@ public class LoginController implements Initializable
     {
         boolean let_in = false;
         
-        String usuario = usuarioTextfield.getText();
-        String password = passwordTextfield.getText();
+        usuario = usuarioTextfield.getText();
+        password = passwordTextfield.getText();
         
         Connection connection = null;
         Statement statement = null;
         
         try 
         {            
-            connection = DriverManager.getConnection(url, login, password);
-            connection.setAutoCommit(false);
-            
-            System.out.println("Opened database successfully");
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            connection = DriverManager.getConnection(url, login, passwordDB);
             statement = connection.createStatement();
             
             ResultSet resultset = statement.executeQuery
             (
-                "SELECT * FROM Users WHERE USERNAME = " + "'" + usuario + "'" + " AND PASSWORD= " + "'" + password + "'"
+                "SELECT * FROM users WHERE User = " + "'" + usuario + "'" + " AND Password = " + "'" + password + "'"
             );
             
             while (resultset.next()) 
             {
-                if (resultset.getString("USERNAME") != null && resultset.getString("PASSWORD") != null) 
+                if (resultset.getString("User") != null && resultset.getString("Password") != null) 
                 { 
                     let_in = true;
+                    System.out.println("Credenciales validas!");
                 }  
             }
             resultset.close();
@@ -110,7 +112,6 @@ public class LoginController implements Initializable
             System.err.println( e.getClass().getName() + ": " + e.getMessage() );
             System.exit(0);
         }
-        System.out.println("isValidCredentials operation done successfully");
         return let_in;
     }
 }
