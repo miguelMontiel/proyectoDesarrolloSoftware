@@ -13,6 +13,9 @@
          <font>
             <Font name="Dotum" size="40.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <Label layoutX="117.0" layoutY="132.0" text="Usuario: ">
          <font>
@@ -28,14 +31,18 @@
             <Font name="Dotum" size="30.0" />
          </font>
       </Label>
-      <TextField fx:id="passwordTextfield" layoutX="285.0" layoutY="196.0" style="-fx-background-color: rgb(225, 230, 255); -fx-border-color: rgb(0, 0, 0, .25);">
-         <font>
-            <Font name="Dotum" size="20.0" />
-         </font></TextField>
       <Button fx:id="buttonRegresar" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#paginaIndex" style="-fx-background-color: rgb(130, 190, 225); -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" text="Regresar">
          <font>
             <Font name="Dotum" size="30.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
+      <PasswordField fx:id="passwordTextfield" layoutX="284.0" layoutY="196.0" style="-fx-background-color: rgb(225, 230, 255); -fx-border-color: rgb(0, 0, 0, .25);">
+         <font>
+            <Font name="Dotum" size="20.0" />
+         </font>
+      </PasswordField>
    </children>
 </AnchorPane>
